@@ -1,0 +1,12 @@
+/* text-align : 정렬 , border-radius : 모서리 둥글기 */
+#main{
+    background-color: whitesmoke;
+    width: 80%;
+    text-align: center;
+    border-radius: 20px; 
+
+}
+
+p{
+    font-size: 20px;
+}
