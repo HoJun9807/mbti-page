@@ -1,7 +1,7 @@
 const main = document.querySelector("#main");
 //quertSelector 문서에서 css선택자에 대응하는 것을 선택해주는 것
 const qna = document.querySelector("#qna");
-const result=document.querySelector("#result");
+const result = document.querySelector("#result");
 
 const endPoint = 12; //문제수
 const select = [0,0,0,0,0,0,0,0,0,0,0,0]; //선택한 값에 따른 배열 저장
@@ -15,7 +15,7 @@ function calResult(){ //결과 계산기
 
 function setResult(){
     let point = calResult();
-    const resultName = document.querySelector('.resultname');
+    const resultName = document.querySelector('.resultName');
     resultName.innerHTML = infoList[point].name;
   
     var resultImg = document.createElement('img');
@@ -71,7 +71,7 @@ function addAnswer(answerText, qIdx, idx){ //qnaList[qIdx].a[i].answer
             for(let i = 0; i < target.length; i++){
                 select[target[i]] += 1;
             }
-            for(let i =0; i<children.length; i++){
+            for(let i = 0; i<children.length; i++){
                 children[i].style.display = 'none';
             }
             goNext(++qIdx);
@@ -85,8 +85,8 @@ function goNext(qIdx){ //질문을 계속 받아야함.
         return;
     }
     var q = document.querySelector('.qBox');
-q.innerHTML = qnaList[qIdx].q;
-//innerHTML : 요소내에 포함 된 HTML을 가져오거나 설정한다.
+    q.innerHTML = qnaList[qIdx].q;
+    //innerHTML : 요소내에 포함 된 HTML을 가져오거나 설정한다.
     for(let i in qnaList[qIdx].a){ // data.js파일의 qInx값에 맞는 a값 반복
         addAnswer(qnaList[qIdx].a[i].answer, qIdx, i); //a[i]에 맞는 answer 값
     }
@@ -102,7 +102,7 @@ function begin(){
         setTimeout(()=>{
             main.style.display="none";
             qna.style.display = "block"; 
-        }, 450);
+        }, 450)
         let qIdx = 0; //<- qIdx 변수값을 지정해준다.
         goNext(qIdx);
     }, 450);
